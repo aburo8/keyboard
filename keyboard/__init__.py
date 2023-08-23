@@ -1123,7 +1123,7 @@ def get_typed_strings(events, allow_backspace=True):
     yield string
 
 _recording = None
-def start_recording(recorded_events_queue=None):
+def start_recording(recorded_events_queue=None, suppress=False):
     """
     Starts recording all keyboard events into a global variable, or the given
     queue if any. Returns the queue of events and the hooked function.
@@ -1132,7 +1132,7 @@ def start_recording(recorded_events_queue=None):
     """
     recorded_events_queue = recorded_events_queue or _queue.Queue()
     global _recording
-    _recording = (recorded_events_queue, hook(recorded_events_queue.put))
+    _recording = (recorded_events_queue, hook(recorded_events_queue.put, suppress))
     return _recording
 
 def stop_recording():
