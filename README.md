@@ -864,9 +864,9 @@ get_type_strings(record()) #-> ['This is what', 'I recorded', '']
 
 <a name="keyboard.start_recording"/>
 
-## keyboard.**start\_recording**(recorded\_events\_queue=None)
+## keyboard.**start\_recording**(recorded\_events\_queue=None, suppress=False)
 
-[\[source\]](https://github.com/boppreh/keyboard/blob/master/keyboard/__init__.py#L1114)
+[\[source\]](https://github.com/boppreh/keyboard/blob/master/keyboard/__init__.py#L1126)
 
 
 Starts recording all keyboard events into a global variable, or the given
